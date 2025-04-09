@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import google.generativeai as genai
 
-genai.configure(api_key='AIzaSyDw6WiX1_IYCWaVuM35ytN1wydi9j2SkDA')
+genai.configure(api_key='Apikey')
 
 def load_csv(file):
     try:
