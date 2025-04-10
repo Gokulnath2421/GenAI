@@ -1,5 +1,6 @@
 import os
 import streamlit as st
+os.system('pip install google-generativeai')
 import pandas as pd
 import google.generativeai as genai
 
