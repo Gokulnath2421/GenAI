@@ -1,9 +1,26 @@
 import os
 import streamlit as st
-os.system('pip install google-generativeai')
 import pandas as pd
+import subprocess
+import sys
+
+# Function to install necessary packages
+def install_package(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Check and install necessary packages if they aren't installed
+required_packages = ["streamlit", "pandas", "google-generativeai"]
+
+for package in required_packages:
+    try:
+        __import__(package)
+    except ImportError:
+        st.warning(f"{package} not found, installing now...")
+        install_package(package)
+
 import google.generativeai as genai
 
+# Configure API key
 genai.configure(api_key='AIzaSyDw6WiX1_IYCWaVuM35ytN1wydi9j2SkDA')
 
 def load_csv(file):
