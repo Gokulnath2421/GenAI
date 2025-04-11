@@ -6,7 +6,7 @@ import sys
 
 # Function to install necessary packages
 def install_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", package])
 
 # Check and install necessary packages if they aren't installed
 required_packages = ["streamlit", "pandas", "google-generativeai"]
